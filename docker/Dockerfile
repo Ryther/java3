@@ -45,7 +45,7 @@ RUN echo 'Creating user: developer' && \
     chmod 4755 /usr/bin/sudo
 
 # Attivazione JDK 3
-	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK1_VER}.tar -O /tmp/jdk${OLD_JDK1_VER}.tar -q && \
+RUN	wget https://github.com/Ryther/intellij-idea/raw/master/docker/jvm/jdk${OLD_JDK1_VER}.tar -O /tmp/jdk${OLD_JDK1_VER}.tar -q && \
 	tar -xzvf /tmp/jdk${OLD_JDK1_VER}.tar -C /usr/lib/jvm/ && \
 	rm -rf /tmp/* && \
 	sudo update-alternatives --install "/usr/bin/java" "java" \
